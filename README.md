@@ -18,9 +18,9 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ### Example prompts
 
-- *"API 5xx spiked to 18% for 25 minutes on checkout-service. Partial outage. Revenue path."*
-- *"Score severity and give me the next 3 mitigations."*
-- *"Remind me in 10 minutes to re-check error rate."*
+- _"API 5xx spiked to 18% for 25 minutes on checkout-service. Partial outage. Revenue path."_
+- _"Score severity and give me the next 3 mitigations."_
+- _"Remind me in 10 minutes to re-check error rate."_
 - Paste a Grafana screenshot and ask what to investigate first.
 
 ## Deploy (low cost)
@@ -33,12 +33,12 @@ npm run deploy
 
 ## Architecture
 
-| Piece | Role |
-| --- | --- |
-| `ChatAgent` (Durable Object) | Persistent session + scheduling |
-| Workers AI (`@cf/moonshotai/kimi-k2.7-code`) | Streaming triage reasoning |
-| Tools | `scoreIncident`, `suggestMitigations`, `scheduleTask` |
-| React UI | Kumo chat from agents-starter |
+| Piece                                                       | Role                                                  |
+| ----------------------------------------------------------- | ----------------------------------------------------- |
+| `ChatAgent` (Durable Object)                                | Persistent session + scheduling                       |
+| Workers AI (`@cf/meta-llama/llama-3.2-11b-vision-instruct`) | Streaming triage reasoning + vision                   |
+| Tools                                                       | `scoreIncident`, `suggestMitigations`, `scheduleTask` |
+| React UI                                                    | Kumo chat from agents-starter                         |
 
 ## License
 

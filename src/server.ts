@@ -50,7 +50,7 @@ export class ChatAgent extends AIChatAgent<Env> {
     const workersai = createWorkersAI({ binding: this.env.AI });
 
     const result = streamText({
-      model: workersai("@cf/moonshotai/kimi-k2.7-code", {
+      model: workersai("@cf/meta-llama/llama-3.2-11b-vision-instruct", {
         sessionAffinity: this.sessionAffinity
       }),
       system: `You are Edge Oncall Copilot — a production incident triage assistant running on Cloudflare Workers + Durable Objects.
